@@ -1,0 +1,1 @@
+/home/vivalchemy/dotfiles/scripts/hyprhaven
