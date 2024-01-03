@@ -24,35 +24,36 @@ Hyprhaven is a Bash script designed to simplify the process of setting up wallpa
 
 1. Clone the repository:
 
-   ```sh
-   git clone https://github.com/your-username/hyprhaven.git
-   cd hyprhaven
-   ```
+```sh
+git clone https://github.com/your-username/hyprhaven.git
+cd hyprhaven
+```
+
 2. Make the script executable:
 
-    ```bash
-    chmod +x hyprhaven.sh
-    ```
+```bash
+chmod +x hyprhaven.sh
+```
 
 3. Run the script with appropriate options:
 
 ```sh
-    ./hyprhaven.sh -r   # Set a random wallpaper
-    ./hyprhaven.sh -d   # Fetch and download wallpapers from Wallhaven
-    ./hyprhaven.sh -c "general, anime" -p "sfw" -q "landscape"  # Customize wallpaper search
+./hyprhaven.sh -r   # Set a random wallpaper
+./hyprhaven.sh -d   # Fetch and download wallpapers from Wallhaven
+./hyprhaven.sh -c "general, anime" -p "sfw" -q "landscape"  # Customize wallpaper search
 ```
 
-    Enjoy your personalized wallpapers!
+Enjoy your personalized wallpapers!
 
 ## Options
 | Option | Description|
-|---|---|
-    |-r| Set a random wallpaper from the local directory.|
-    |-d| Fetch and download wallpapers from Wallhaven based on specified criteria.|
-    |-c CATEGORY| Specify wallpaper categories (e.g., "general, anime").|
-    |-p PURITY| Specify wallpaper purity (e.g., "sfw, nsfw").|
-    |-q QUERY| Specify a search query for wallpapers.|
-    -s FILE_PATH: Set a specific wallpaper using the provided file path.
+|--------|------------|
+|-r| Set a random wallpaper from the local directory.|
+|-d| Fetch and download wallpapers from Wallhaven based on specified criteria.|
+|-c CATEGORY| Specify wallpaper categories (e.g., "general, anime").|
+|-p PURITY| Specify wallpaper purity (e.g., "sfw, nsfw").|
+|-q QUERY| Specify a search query for wallpapers.|
+|-s FILE_PATH| Set a specific wallpaper using the provided file path.|
 
 ## Configuration
 
