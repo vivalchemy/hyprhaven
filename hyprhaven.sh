@@ -3,7 +3,7 @@
 # constants
 BASE_URL="https://wallhaven.cc/api/v1/search?"
 QUERY_PARAMS=""
-WALLPAPER_DIR="${HOME}/Pictures/wallpapers"
+WALLPAPER_DIR="${HOME}/Pictures/wallpapers/"
 HYPRPAPER_CONF_FILE="$HOME/.config/hypr/hyprpaper.conf"
 TMP_FILE="${WALLPAPER_DIR}tmp.txt"
 MIN_RES="1920x1080" #	|| PERMITTED_RES="1920x1080,1920x1200"
