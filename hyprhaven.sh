@@ -27,6 +27,13 @@ if [[ $# -eq 0 ]]; then
 	echo -e "|    \e[38;5;226m        |___/|_|                                     \e[0m    |"
 	echo -e "|            A wallpaper setup script for \e]8;;https://github.com/hyprwm/hyprpaper\ahyprpaper\e]8;;\a           |"
 	echo "+-------------------------------------------------------------+"
+	echo -e "\n\nOptions:\n"
+	echo "-r: Set a random wallpaper from the local directory."
+	echo "-d: Fetch and download wallpapers from Wallhaven based on specified criteria."
+	echo "-c CATEGORY: Specify wallpaper categories (e.g., \"general, anime\")."
+	echo "-p PURITY: Specify wallpaper purity (e.g., \"sfw, nsfw\")."
+	echo "-q QUERY: Specify a search query for wallpapers."
+	echo "-s FILE_PATH: Set a specific wallpaper using the provided file path."
 	exit 1
 fi
 
@@ -116,14 +123,14 @@ setRandomWallpaper() {
 getImageUrls() {
 	local PAGE_COUNT=1
 
-	[[ -f "${TMP_FILE}" ]] && echo -n "" > $TMP_FILE
+	[[ -f "${TMP_FILE}" ]] && echo -n "" >$TMP_FILE
 	while [[ $(wc -l <"$TMP_FILE") -lt $MAX_IMAGES && $PAGE_COUNT -le $MAX_PAGES ]]; do
 		QUERY_PARAMS=$(echo "$QUERY_PARAMS" | sed 's/&page=[0-9]\+//g') # removes previous page numbers
 		QUERY_PARAMS+="&page=$PAGE_COUNT"                               # adds current page number
-		curl -s "${BASE_URL}${QUERY_PARAMS#&}" | jq | rg path | sed 's/.*wallhaven-\(.*\)\.\(.*\)".*/\1 \2/g' >> "${TMP_FILE}"
+		curl -s "${BASE_URL}${QUERY_PARAMS#&}" | jq | rg path | sed 's/.*wallhaven-\(.*\)\.\(.*\)".*/\1 \2/g' >>"${TMP_FILE}"
 		# curl "${BASE_URL}${QUERY_PARAMS#&}" | jq | rg path | sed 's/.*wallhaven-\(.*\)\.\(.*\)".*/\1 \2/g'
 		# echo "${BASE_URL}${QUERY_PARAMS#&}"
-		echo "$PAGE_COUNT $(wc -l < $TMP_FILE)"
+		echo "$PAGE_COUNT $(wc -l <$TMP_FILE)"
 		((PAGE_COUNT++))
 	done
 }
