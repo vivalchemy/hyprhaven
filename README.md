@@ -18,6 +18,14 @@ Hyprhaven is a Bash script designed to simplify the process of setting up wallpa
 
 - Bash (Unix shell)
 - [Hyprpaper](https://github.com/hyprwm/hyprpaper) - Wallpaper manager
+- **`curl`**: Command-line tool for making HTTP requests.  
+- **`jq`**: Command-line JSON processor.  
+- **`ripgrep` (`rg`)**: A fast search tool.  
+- **`notify-send`**: Tool for sending desktop notifications.  
+- **`awk`**: Text processing and pattern scanning tool.  
+- **`sed`**: Stream editor for filtering and transforming text.  
+- **`ls`**: Directory listing tool.  
+- **`shuf`**: Command-line tool for randomizing input.  
 - Wallhaven API key (optional, for accessing NSFW images)
 
 ## Getting Started
